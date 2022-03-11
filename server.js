@@ -12,14 +12,17 @@ const normalizePort = val => {
     } else {
         return false;
     }
-}
+}; 
+
 const port = normalizePort(process.env.PORT || 3000);
+
+// traitement des errors
 const errorHandler = error => {
     if (error.syscall !=='listen'){
         throw error;
     }
     const address = server.address();
-    const bind = typeof address === 'string' ? 'pipe' + adress: 'port:' + port;
+    const bind = typeof address === 'string' ? 'pipe' + address: 'port:' + port;
     switch (error.code){
         case 'EACCES':
             console.error(bind + ' requires elevated privileges.');
@@ -38,11 +41,14 @@ const errorHandler = error => {
 
 // createServer : prend en argument une FONCTION (requête, résultat)
 // app contient une fonction qui prend en charge se rôle. 
-const server = http.createServer(app)
+const server = http.createServer(app);
+
+// on laisse le serveur écouter. 
 server.on('error',errorHandler);
 server.on('listening',() => {
-        const address = typeof address === 'string' ? 'pipe' + address: 'port' + port;
-        console.log('Listening on ' + bind);
+    const address = server.address();
+    const bind = typeof add === 'string' ? 'pipe' + address: 'port' + port;
+    console.log('Listening on ' + bind);
     }
 );
 
