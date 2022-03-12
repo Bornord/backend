@@ -1,5 +1,8 @@
 // require = import en python ou en java
+// serveur principal qui gère le backend
 const http = require('http');
+
+// server backend qui gère les requêtes
 const app = require('./app.js');
 
 // amélioration du code
