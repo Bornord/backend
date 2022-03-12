@@ -40,7 +40,7 @@ const errorHandler = error => {
 };
 
 // createServer : prend en argument une FONCTION (requête, résultat)
-// app contient une fonction qui prend en charge se rôle. 
+// app contient une fonction qui prend en charge ce rôle. 
 const server = http.createServer(app);
 
 // on laisse le serveur écouter. 
